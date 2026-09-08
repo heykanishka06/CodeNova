@@ -1141,3 +1141,576 @@ RESPONSIVE
     }
 
 }
+/* =========================================================
+   AI CASE SUMMARY
+========================================================= */
+
+.ai-summary-card {
+    margin-top: 28px;
+    padding: 26px;
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7fffc 0%,
+            #eefaf6 100%
+        );
+
+    border: 1px solid #cfe8df;
+
+    box-shadow:
+        0 12px 30px rgba(8, 127, 108, 0.08);
+}
+
+
+/* =========================================================
+   AI HEADER
+========================================================= */
+
+.ai-summary-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-bottom: 22px;
+}
+
+
+.ai-summary-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087f6c,
+            #0ca98d
+        );
+
+    color: white;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 8px 18px rgba(8, 127, 108, 0.2);
+}
+
+
+.ai-summary-header h3 {
+    margin: 0;
+
+    font-size: 20px;
+
+    color: #123d37;
+}
+
+
+.ai-summary-header p {
+    margin: 5px 0 0;
+
+    color: #6a817c;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   AI CONTENT
+========================================================= */
+
+.ai-summary-content {
+    background: white;
+
+    border: 1px solid #dcece7;
+
+    border-radius: 16px;
+
+    min-height: 170px;
+
+    padding: 24px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.ai-summary-empty {
+    min-height: 120px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.ai-empty-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e5f6f0;
+
+    color: #087f6c;
+
+    margin-bottom: 12px;
+
+    font-size: 18px;
+}
+
+
+.ai-summary-empty h4 {
+    margin: 0 0 6px;
+
+    font-size: 16px;
+
+    color: #183f39;
+}
+
+
+.ai-summary-empty p {
+    max-width: 520px;
+
+    margin: 0;
+
+    color: #70827e;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   AI BUTTON
+========================================================= */
+
+.ai-summary-actions {
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+
+.ai-generate-btn {
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 12px 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087f6c,
+            #0b967f
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+
+    box-shadow:
+        0 8px 18px rgba(8, 127, 108, 0.18);
+}
+
+
+.ai-generate-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 24px rgba(8, 127, 108, 0.25);
+}
+
+
+.ai-generate-btn:active {
+    transform: translateY(0);
+}
+
+
+.ai-generate-btn:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   AI SPINNER
+========================================================= */
+
+.ai-spinner {
+    width: 15px;
+    height: 15px;
+
+    border: 2px solid rgba(255, 255, 255, 0.35);
+
+    border-top-color: white;
+
+    border-radius: 50%;
+
+    animation:
+        aiSpin 0.8s linear infinite;
+}
+
+
+@keyframes aiSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   AI LOADING
+========================================================= */
+
+.ai-loading {
+    min-height: 120px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.ai-loading-animation {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 15px;
+}
+
+
+.ai-loading-animation span {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #087f6c;
+
+    animation:
+        aiBounce 1.2s infinite ease-in-out;
+}
+
+
+.ai-loading-animation span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+
+.ai-loading-animation span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+
+@keyframes aiBounce {
+
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.45;
+    }
+
+    30% {
+        transform: translateY(-7px);
+        opacity: 1;
+    }
+
+}
+
+
+.ai-loading h4 {
+    margin: 0 0 7px;
+
+    color: #173f38;
+
+    font-size: 16px;
+}
+
+
+.ai-loading p {
+    margin: 0;
+
+    color: #71847f;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   AI RESULT
+========================================================= */
+
+.ai-result {
+    color: #304944;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+.ai-result-heading {
+    margin: 20px 0 9px;
+
+    padding-bottom: 7px;
+
+    border-bottom: 1px solid #e3eee9;
+
+    color: #087f6c;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.ai-result-heading:first-child {
+    margin-top: 0;
+}
+
+
+.ai-result-paragraph {
+    margin: 7px 0;
+
+    color: #405651;
+}
+
+
+.ai-result-list {
+    margin: 8px 0 14px;
+
+    padding-left: 22px;
+}
+
+
+.ai-result-list li {
+    margin: 6px 0;
+
+    color: #405651;
+}
+
+
+.ai-result-list li::marker {
+    color: #087f6c;
+}
+
+
+/* =========================================================
+   AI ERROR
+========================================================= */
+
+.ai-error {
+    min-height: 120px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 10px;
+}
+
+
+.ai-error-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #fff0ed;
+
+    color: #d85b45;
+
+    font-size: 18px;
+}
+
+
+.ai-error h4 {
+    margin: 0 0 5px;
+
+    color: #763d33;
+
+    font-size: 15px;
+}
+
+
+.ai-error p {
+    margin: 0 0 5px;
+
+    color: #805d57;
+
+    font-size: 13px;
+}
+
+
+.ai-error small {
+    color: #a08079;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   AI DISCLAIMER
+========================================================= */
+
+.ai-disclaimer {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-top: 16px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid #dcebe6;
+
+    color: #71847f;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+.ai-disclaimer i {
+    margin-top: 2px;
+
+    color: #087f6c;
+}
+
+
+/* =========================================================
+   SMART DETAIL SECTION
+========================================================= */
+
+.smart-detail-section {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+
+    align-items: stretch;
+}
+
+
+.smart-detail-section h3 {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .ai-summary-card {
+        padding: 18px;
+
+        border-radius: 16px;
+    }
+
+
+    .ai-summary-header {
+        align-items: flex-start;
+    }
+
+
+    .ai-summary-icon {
+        width: 42px;
+        height: 42px;
+
+        font-size: 17px;
+    }
+
+
+    .ai-summary-header h3 {
+        font-size: 17px;
+    }
+
+
+    .ai-summary-content {
+        padding: 17px;
+    }
+
+
+    .ai-summary-actions {
+        justify-content: stretch;
+    }
+
+
+    .ai-generate-btn {
+        width: 100%;
+    }
+
+
+    .smart-detail-section {
+        grid-template-columns: 1fr;
+    }
+
+}
