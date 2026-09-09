@@ -1,1093 +1,2104 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>MediCase | Patient Case Taking</title>
+    <title>MediCase | Patient Case Taking</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<!-- Font Awesome -->
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-```
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
 <body>
 
-<div class="app">
 
-```
-<!-- ================= SIDEBAR ================= -->
+<!-- =====================================================
+     DOCTOR LOGIN
+===================================================== -->
 
-<aside class="sidebar">
+<div id="loginScreen" class="login-screen">
 
-    <div class="logo">
+    <div class="login-card">
 
-        <div class="medical-logo">
-            <span class="medical-cross"></span>
+
+        <!-- LOGIN LOGO -->
+
+        <div class="login-logo">
+
+            <div class="medical-logo">
+                <span class="medical-cross"></span>
+            </div>
+
+            <div>
+
+                <h1>MediCase</h1>
+
+                <p>
+                    Smart Healthcare
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="logo-info">
-            <h2>MediCase</h2>
-            <span>Smart Healthcare</span>
+
+        <!-- LOGIN HEADING -->
+
+        <div class="login-heading">
+
+            <h2>
+                Doctor Login
+            </h2>
+
+            <p>
+                Sign in to access your patient cases
+            </p>
+
         </div>
+
+
+        <!-- LOGIN FORM -->
+
+        <form id="loginForm">
+
+
+            <!-- DOCTOR ID -->
+
+            <div class="login-field">
+
+                <label for="doctorId">
+                    Doctor ID
+                </label>
+
+                <div class="login-input">
+
+                    <i class="fa-solid fa-id-card"></i>
+
+                    <input
+                        type="text"
+                        id="doctorId"
+                        placeholder="Enter Doctor ID"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="login-field">
+
+                <label for="doctorEmail">
+                    Email
+                </label>
+
+                <div class="login-input">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="doctorEmail"
+                        placeholder="Enter email address"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="login-field">
+
+                <label for="doctorPassword">
+                    Password
+                </label>
+
+                <div class="login-input">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="doctorPassword"
+                        placeholder="Enter password"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                type="submit"
+                class="login-btn">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Login
+
+            </button>
+
+
+            <!-- LOGIN ERROR -->
+
+            <p
+                id="loginError"
+                class="login-error">
+            </p>
+
+
+            <!-- DEMO LOGIN -->
+
+            <div class="demo-login">
+
+                <strong>
+                    Demo Login
+                </strong>
+
+                <span>
+                    Doctor ID: DOC001
+                </span>
+
+                <span>
+                    Email: doctor@medicase.com
+                </span>
+
+                <span>
+                    Password: 123456
+                </span>
+
+            </div>
+
+
+        </form>
 
     </div>
 
-    <nav>
-
-        <a href="#">
-            <i class="fa-solid fa-chart-line"></i>
-            <span>Dashboard</span>
-        </a>
-
-        <a href="#" class="active">
-            <i class="fa-solid fa-file-medical"></i>
-            <span>New Case</span>
-        </a>
-
-        <a href="#">
-            <i class="fa-solid fa-users"></i>
-            <span>Patients</span>
-        </a>
-
-        <a href="#">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-            <span>Case History</span>
-        </a>
-
-        <a href="#">
-            <i class="fa-solid fa-file-pdf"></i>
-            <span>Reports</span>
-        </a>
-
-    </nav>
-
-    <div class="sidebar-bottom">
-
-        <a href="#">
-            <i class="fa-solid fa-gear"></i>
-            <span>Settings</span>
-        </a>
-
-        <a href="#">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <span>Logout</span>
-        </a>
-
-    </div>
-
-</aside>
+</div>
 
 
-<!-- ================= MAIN ================= -->
 
-<main class="main">
+<!-- =====================================================
+     MEDICASE APP
+===================================================== -->
 
-    <!-- TOP BAR -->
+<div class="app" id="app">
 
-    <header class="topbar">
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================= -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="medical-logo">
+
+                <span class="medical-cross"></span>
+
+            </div>
+
+
+            <div class="logo-info">
+
+                <h2>
+                    MediCase
+                </h2>
+
+                <span>
+                    Smart Healthcare
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav>
+
+
+            <!-- DASHBOARD -->
+
+            <a href="#" id="dashboardLink">
+    <i class="fa-solid fa-chart-line"></i>
+    <span>Dashboard</span>
+</a>
+
+
+            <!-- NEW CASE -->
+
+            <a
+                href="#"
+                class="active">
+
+                <i class="fa-solid fa-file-medical"></i>
+
+                <span>
+                    New Case
+                </span>
+
+            </a>
+
+
+            <!-- PATIENTS -->
+
+            <a href="#">
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Patients
+                </span>
+
+            </a>
+
+
+            <!-- CASE HISTORY -->
+
+            <a href="#">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>
+                    Case History
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <a href="#">
+
+                <i class="fa-solid fa-file-pdf"></i>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+
+            <!-- SETTINGS -->
+
+            <a href="#">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <!-- LOGOUT -->
+
+            <a
+                href="#"
+                id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN
+    ================================================= -->
+
+    <main class="main">
+
+
+        <!-- =================================================
+             TOP BAR
+        ================================================= -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <h1>
+                    New Patient Case
+                </h1>
+
+                <p>
+                    Complete the patient's clinical information
+                </p>
+
+            </div>
+
+
+
+            <!-- DYNAMIC DOCTOR INFORMATION -->
+
+            <div class="doctor">
+
+
+                <div class="doctor-icon">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="doctorName">
+                        Doctor
+                    </strong>
+
+                    <span id="doctorDetails">
+                        Specialization • Clinic
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             PROGRESS
+        ================================================= -->
+
+        <div class="progress-container">
+
+
+            <div class="progress-step active">
+
+                <span>
+                    1
+                </span>
+
+                <p>
+                    Patient
+                </p>
+
+            </div>
+
+
+            <div class="line active"></div>
+
+
+            <div class="progress-step">
+
+                <span>
+                    2
+                </span>
+
+                <p>
+                    Complaint
+                </p>
+
+            </div>
+
+
+            <div class="line"></div>
+
+
+            <div class="progress-step">
+
+                <span>
+                    3
+                </span>
+
+                <p>
+                    Symptoms
+                </p>
+
+            </div>
+
+
+            <div class="line"></div>
+
+
+            <div class="progress-step">
+
+                <span>
+                    4
+                </span>
+
+                <p>
+                    Lifestyle
+                </p>
+
+            </div>
+
+
+            <div class="line"></div>
+
+
+            <div class="progress-step">
+
+                <span>
+                    5
+                </span>
+
+                <p>
+                    Assessment
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<section id="dashboardPage" class="dashboard-page">
+
+    <div class="dashboard-welcome">
 
         <div>
-            <h1>New Patient Case</h1>
-            <p>Complete the patient's clinical information</p>
+            <span class="dashboard-label">
+                MEDICASE DASHBOARD
+            </span>
+
+            <h1 id="dashboardGreeting">
+                Welcome, Doctor
+            </h1>
+
+            <p>
+                Here's an overview of your patient records and clinical activity.
+            </p>
         </div>
 
-        <div class="doctor">
+        <div class="dashboard-date">
+            <i class="fa-regular fa-calendar"></i>
+            <span id="dashboardDate"></span>
+        </div>
 
-            <div class="doctor-icon">
+    </div>
+
+
+    <!-- STAT CARDS -->
+
+    <div class="dashboard-stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon patients-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div>
+                <span>Total Patients</span>
+                <strong id="totalPatients">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon cases-icon">
+                <i class="fa-solid fa-file-medical"></i>
+            </div>
+
+            <div>
+                <span>Total Cases</span>
+                <strong id="totalCases">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon today-icon">
+                <i class="fa-solid fa-calendar-day"></i>
+            </div>
+
+            <div>
+                <span>Today's Cases</span>
+                <strong id="todayCases">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon ai-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+
+            <div>
+                <span>AI Assisted</span>
+                <strong>Active</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- DASHBOARD CONTENT -->
+
+    <div class="dashboard-grid">
+
+
+        <!-- RECENT PATIENTS -->
+
+        <div class="dashboard-card recent-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+                    <h2>Recent Patients</h2>
+
+                    <p>
+                        Your latest patient records
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    id="dashboardPatientsBtn"
+                    class="dashboard-link-btn">
+
+                    View All
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <div id="recentPatients">
+
+                <div class="dashboard-empty">
+
+                    <i class="fa-solid fa-user-group"></i>
+
+                    <p>
+                        No patient records yet.
+                    </p>
+
+                    <span>
+                        Add your first patient to see them here.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="dashboard-card quick-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+                    <h2>Quick Actions</h2>
+
+                    <p>
+                        Frequently used actions
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+                <button
+                    type="button"
+                    id="dashboardNewCaseBtn"
+                    class="quick-action">
+
+                    <div class="quick-action-icon">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+
+                    <div>
+                        <strong>New Patient Case</strong>
+                        <span>Start a new clinical record</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="dashboardViewPatientsBtn"
+                    class="quick-action">
+
+                    <div class="quick-action-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <strong>View Patients</strong>
+                        <span>Manage saved patient records</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="dashboardAIInfoBtn"
+                    class="quick-action">
+
+                    <div class="quick-action-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <div>
+                        <strong>AI Case Summary</strong>
+                        <span>Generate intelligent case summaries</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- DOCTOR PROFILE -->
+
+    <div class="dashboard-card doctor-profile-card">
+
+        <div class="profile-heading">
+
+            <div class="profile-avatar">
                 <i class="fa-solid fa-user-doctor"></i>
             </div>
 
             <div>
-                <strong>Practitioner</strong>
-                <span>Ayurveda Clinic</span>
+                <h2 id="dashboardDoctorName">
+                    Doctor
+                </h2>
+
+                <p id="dashboardDoctorSpecialization">
+                    Medical Practitioner
+                </p>
             </div>
 
         </div>
 
-    </header>
 
+        <div class="profile-details">
 
-    <!-- ================= PROGRESS ================= -->
+            <div>
+                <span>Doctor ID</span>
+                <strong id="dashboardDoctorId">—</strong>
+            </div>
 
-    <div class="progress-container">
+            <div>
+                <span>Email</span>
+                <strong id="dashboardDoctorEmail">—</strong>
+            </div>
 
-        <div class="progress-step active">
-            <span>1</span>
-            <p>Patient</p>
-        </div>
+            <div>
+                <span>Clinic / Hospital</span>
+                <strong id="dashboardDoctorClinic">—</strong>
+            </div>
 
-        <div class="line active"></div>
-
-        <div class="progress-step">
-            <span>2</span>
-            <p>Complaint</p>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="progress-step">
-            <span>3</span>
-            <p>Symptoms</p>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="progress-step">
-            <span>4</span>
-            <p>Lifestyle</p>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="progress-step">
-            <span>5</span>
-            <p>Assessment</p>
         </div>
 
     </div>
 
+</section>
+        <!-- =================================================
+             PATIENT FORM
+        ================================================= -->
 
-    <!-- ================= FORM ================= -->
-
-    <form id="patientForm">
-
-
-        <!-- ================= PATIENT INFORMATION ================= -->
-
-        <section class="card">
-
-            <div class="section-heading">
-
-                <div class="section-icon">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-
-                <div>
-                    <h2>Patient Information</h2>
-                    <p>Basic details of the patient</p>
-                </div>
-
-            </div>
+        <form id="patientForm">
 
 
-            <div class="form-grid">
+            <!-- =================================================
+                 PATIENT INFORMATION
+            ================================================= -->
 
-                <div class="field full">
+            <section class="card">
 
-                    <label for="patientName">Patient Name</label>
 
-                    <div class="input-box">
+                <div class="section-heading">
+
+                    <div class="section-icon">
 
                         <i class="fa-solid fa-user"></i>
 
-                        <input
-                            id="patientName"
-                            type="text"
-                            name="patientName"
-                            placeholder="Enter patient's full name"
-                            autocomplete="name">
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            Patient Information
+                        </h2>
+
+                        <p>
+                            Basic details of the patient
+                        </p>
 
                     </div>
 
                 </div>
 
+
+
+                <div class="form-grid">
+
+
+                    <!-- PATIENT NAME -->
+
+                    <div class="field full">
+
+                        <label for="patientName">
+                            Patient Name
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                id="patientName"
+                                type="text"
+                                name="patientName"
+                                placeholder="Enter patient's full name"
+                                autocomplete="name">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- AGE -->
+
+                    <div class="field">
+
+                        <label for="age">
+                            Age
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-calendar"></i>
+
+                            <input
+                                id="age"
+                                type="number"
+                                name="age"
+                                min="0"
+                                max="120"
+                                placeholder="Age">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- GENDER -->
+
+                    <div class="field">
+
+                        <label for="gender">
+                            Gender
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-venus-mars"></i>
+
+                            <select
+                                id="gender"
+                                name="gender">
+
+                                <option value="">
+                                    Select gender
+                                </option>
+
+                                <option value="Male">
+                                    Male
+                                </option>
+
+                                <option value="Female">
+                                    Female
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="field">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                id="phone"
+                                type="tel"
+                                name="phone"
+                                placeholder="Enter phone number"
+                                autocomplete="tel">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- OCCUPATION -->
+
+                    <div class="field">
+
+                        <label for="occupation">
+                            Occupation
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-briefcase"></i>
+
+                            <input
+                                id="occupation"
+                                type="text"
+                                name="occupation"
+                                placeholder="Enter occupation">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="field full">
+
+                        <label for="address">
+                            Address
+                        </label>
+
+
+                        <textarea
+                            id="address"
+                            name="address"
+                            placeholder="Enter patient's address..."></textarea>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CHIEF COMPLAINT
+            ================================================= -->
+
+            <section class="card">
+
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-stethoscope"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            Chief Complaint
+                        </h2>
+
+                        <p>
+                            Understand the primary reason for consultation
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MAIN COMPLAINT -->
 
                 <div class="field">
 
-                    <label for="age">Age</label>
+                    <label for="mainComplaint">
+                        Main Complaint
+                    </label>
 
-                    <div class="input-box">
-
-                        <i class="fa-solid fa-calendar"></i>
-
-                        <input
-                            id="age"
-                            type="number"
-                            name="age"
-                            min="0"
-                            max="120"
-                            placeholder="Age">
-
-                    </div>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label for="gender">Gender</label>
-
-                    <div class="input-box">
-
-                        <i class="fa-solid fa-venus-mars"></i>
-
-                        <select id="gender" name="gender">
-
-                            <option value="">Select gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Other">Other</option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label for="phone">Phone Number</label>
-
-                    <div class="input-box">
-
-                        <i class="fa-solid fa-phone"></i>
-
-                        <input
-                            id="phone"
-                            type="tel"
-                            name="phone"
-                            placeholder="Enter phone number"
-                            autocomplete="tel">
-
-                    </div>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label for="occupation">Occupation</label>
-
-                    <div class="input-box">
-
-                        <i class="fa-solid fa-briefcase"></i>
-
-                        <input
-                            id="occupation"
-                            type="text"
-                            name="occupation"
-                            placeholder="Enter occupation">
-
-                    </div>
-
-                </div>
-
-
-                <div class="field full">
-
-                    <label for="address">Address</label>
 
                     <textarea
-                        id="address"
-                        name="address"
-                        placeholder="Enter patient's address..."></textarea>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CHIEF COMPLAINT ================= -->
-
-        <section class="card">
-
-            <div class="section-heading">
-
-                <div class="section-icon">
-                    <i class="fa-solid fa-stethoscope"></i>
-                </div>
-
-                <div>
-                    <h2>Chief Complaint</h2>
-                    <p>Understand the primary reason for consultation</p>
-                </div>
-
-            </div>
-
-
-            <div class="field">
-
-                <label for="mainComplaint">Main Complaint</label>
-
-                <textarea
-                    id="mainComplaint"
-                    name="mainComplaint"
-                    placeholder="Describe the patient's main complaint..."></textarea>
-
-            </div>
-
-
-            <div class="form-grid">
-
-                <div class="field">
-
-                    <label>Duration</label>
-
-                    <div class="duration">
-
-                        <input
-                            type="number"
-                            name="complaintDuration"
-                            min="0"
-                            placeholder="Duration">
-
-                        <select name="complaintDurationUnit">
-
-                            <option value="Days">Days</option>
-                            <option value="Weeks">Weeks</option>
-                            <option value="Months">Months</option>
-                            <option value="Years">Years</option>
-
-                        </select>
-
-                    </div>
+                        id="mainComplaint"
+                        name="mainComplaint"
+                        placeholder="Describe the patient's main complaint..."></textarea>
 
                 </div>
 
 
-                <div class="field">
 
-                    <label>Severity</label>
+                <div class="form-grid">
 
-                    <div class="severity">
+
+                    <!-- DURATION -->
+
+                    <div class="field">
 
                         <label>
-                            <input
-                                type="radio"
-                                name="severity"
-                                value="Mild">
-                            <span class="mild">Mild</span>
+                            Duration
                         </label>
+
+
+                        <div class="duration">
+
+                            <input
+                                type="number"
+                                name="complaintDuration"
+                                min="0"
+                                placeholder="Duration">
+
+
+                            <select
+                                name="complaintDurationUnit">
+
+                                <option value="Days">
+                                    Days
+                                </option>
+
+                                <option value="Weeks">
+                                    Weeks
+                                </option>
+
+                                <option value="Months">
+                                    Months
+                                </option>
+
+                                <option value="Years">
+                                    Years
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SEVERITY -->
+
+                    <div class="field">
 
                         <label>
-                            <input
-                                type="radio"
-                                name="severity"
-                                value="Moderate">
-                            <span class="moderate">Moderate</span>
+                            Severity
                         </label>
 
-                        <label>
-                            <input
-                                type="radio"
-                                name="severity"
-                                value="Severe">
-                            <span class="severe">Severe</span>
-                        </label>
+
+                        <div class="severity">
+
+
+                            <label>
+
+                                <input
+                                    type="radio"
+                                    name="severity"
+                                    value="Mild">
+
+                                <span class="mild">
+                                    Mild
+                                </span>
+
+                            </label>
+
+
+                            <label>
+
+                                <input
+                                    type="radio"
+                                    name="severity"
+                                    value="Moderate">
+
+                                <span class="moderate">
+                                    Moderate
+                                </span>
+
+                            </label>
+
+
+                            <label>
+
+                                <input
+                                    type="radio"
+                                    name="severity"
+                                    value="Severe">
+
+                                <span class="severe">
+                                    Severe
+                                </span>
+
+                            </label>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SYMPTOMS
+            ================================================= -->
+
+            <section class="card">
+
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-heart-pulse"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            Symptoms
+                        </h2>
+
+                        <p>
+                            Select all symptoms experienced by the patient
+                        </p>
 
                     </div>
 
                 </div>
 
-            </div>
 
-        </section>
 
+                <!-- =================================================
+                     DIGESTIVE
+                ================================================= -->
 
-        <!-- ================= SYMPTOMS ================= -->
+                <div class="smart-question">
 
-        <section class="card">
 
-            <div class="section-heading">
+                    <h3>
 
-                <div class="section-icon">
-                    <i class="fa-solid fa-heart-pulse"></i>
-                </div>
-
-                <div>
-                    <h2>Symptoms</h2>
-                    <p>Select all symptoms experienced by the patient</p>
-                </div>
-
-            </div>
-
-
-            <!-- DIGESTIVE -->
-
-            <div class="smart-question">
-
-                <h3>
-                    <i class="fa-solid fa-utensils"></i>
-                    Do you have digestive problems?
-                </h3>
-
-                <div class="yes-no">
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="digestiveProblem"
-                            value="yes">
-                        Yes
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="digestiveProblem"
-                            value="no">
-                        No
-                    </label>
-
-                </div>
-
-
-                <div
-                    id="digestiveQuestions"
-                    class="smart-details">
-
-                    <div class="field">
-
-                        <label for="digestiveType">
-                            What type of digestive problem?
-                        </label>
-
-                        <input
-                            type="text"
-                            id="digestiveType"
-                            name="digestiveType"
-                            placeholder="e.g. acidity, constipation, bloating">
-
-                    </div>
-
-
-                    <div class="field">
-
-                        <label for="digestiveSeverity">
-                            How severe is it?
-                        </label>
-
-                        <select
-                            id="digestiveSeverity"
-                            name="digestiveSeverity">
-
-                            <option value="">
-                                Select severity
-                            </option>
-
-                            <option value="Mild">Mild</option>
-                            <option value="Moderate">Moderate</option>
-                            <option value="Severe">Severe</option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- RESPIRATORY -->
-
-            <div class="smart-question">
-
-                <h3>
-                    <i class="fa-solid fa-lungs"></i>
-                    Do you have any respiratory problems?
-                </h3>
-
-                <div class="yes-no">
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="respiratoryProblem"
-                            value="yes">
-                        Yes
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="respiratoryProblem"
-                            value="no">
-                        No
-                    </label>
-
-                </div>
-
-
-                <div
-                    id="respiratoryQuestions"
-                    class="smart-details">
-
-                    <div class="field">
-
-                        <label for="respiratoryType">
-                            What type of respiratory problem?
-                        </label>
-
-                        <select
-                            id="respiratoryType"
-                            name="respiratoryType">
-
-                            <option value="">
-                                Select a problem
-                            </option>
-
-                            <option value="Cough">Cough</option>
-                            <option value="Cold">Cold</option>
-                            <option value="Breathing Difficulty">
-                                Breathing Difficulty
-                            </option>
-                            <option value="Wheezing">Wheezing</option>
-                            <option value="Chest Congestion">
-                                Chest Congestion
-                            </option>
-                            <option value="Other">Other</option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="field">
-
-                        <label for="respiratoryDuration">
-                            How long have you had this problem?
-                        </label>
-
-                        <input
-                            type="text"
-                            id="respiratoryDuration"
-                            name="respiratoryDuration"
-                            placeholder="e.g. 2 weeks">
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- SLEEP -->
-
-            <div class="smart-question">
-
-                <h3>
-                    <i class="fa-solid fa-bed"></i>
-                    Do you have any problems with your sleep?
-                </h3>
-
-                <div class="yes-no">
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="sleepProblem"
-                            value="yes">
-                        Yes
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="sleepProblem"
-                            value="no">
-                        No
-                    </label>
-
-                </div>
-
-
-                <div
-                    id="sleepQuestions"
-                    class="smart-details">
-
-                    <div class="field">
-
-                        <label for="sleepType">
-                            What type of sleep problem?
-                        </label>
-
-                        <select
-                            id="sleepType"
-                            name="sleepType">
-
-                            <option value="">
-                                Select a problem
-                            </option>
-
-                            <option value="Difficulty falling asleep">
-                                Difficulty falling asleep
-                            </option>
-
-                            <option value="Frequent waking">
-                                Waking frequently
-                            </option>
-
-                            <option value="Early waking">
-                                Waking too early
-                            </option>
-
-                            <option value="Excessive sleep">
-                                Excessive sleep
-                            </option>
-
-                            <option value="Disturbed sleep">
-                                Disturbed sleep
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="field">
-
-                        <label for="sleepHours">
-                            How many hours do you usually sleep?
-                        </label>
-
-                        <input
-                            type="number"
-                            id="sleepHours"
-                            name="sleepHours"
-                            min="0"
-                            max="24"
-                            placeholder="e.g. 7">
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- COMMON SYMPTOMS -->
-
-            <div class="symptoms">
-
-                <label class="symptom">
-
-                    <input
-                        type="checkbox"
-                        name="symptoms"
-                        value="Acidity">
-
-                    <span>
-                        <i class="fa-solid fa-fire"></i>
-                        Acidity
-                    </span>
-
-                </label>
-
-
-                <label class="symptom">
-
-                    <input
-                        type="checkbox"
-                        name="symptoms"
-                        value="Bloating">
-
-                    <span>
-                        <i class="fa-solid fa-wind"></i>
-                        Bloating
-                    </span>
-
-                </label>
-
-
-                <label class="symptom">
-
-                    <input
-                        type="checkbox"
-                        name="symptoms"
-                        value="Constipation">
-
-                    <span>
-                        <i class="fa-solid fa-toilet"></i>
-                        Constipation
-                    </span>
-
-                </label>
-
-
-                <label class="symptom">
-
-                    <input
-                        type="checkbox"
-                        name="symptoms"
-                        value="Diarrhea">
-
-                    <span>
-                        <i class="fa-solid fa-droplet"></i>
-                        Diarrhea
-                    </span>
-
-                </label>
-
-
-                <label class="symptom">
-
-                    <input
-                        type="checkbox"
-                        name="symptoms"
-                        value="Headache">
-
-                    <span>
-                        <i class="fa-solid fa-head-side-virus"></i>
-                        Headache
-                    </span>
-
-                </label>
-
-
-                <label class="symptom">
-
-                    <input
-                        type="checkbox"
-                        name="symptoms"
-                        value="Fatigue">
-
-                    <span>
-                        <i class="fa-solid fa-battery-quarter"></i>
-                        Fatigue
-                    </span>
-
-                </label>
-
-
-                <label class="symptom">
-
-                    <input
-                        type="checkbox"
-                        name="symptoms"
-                        value="Nausea">
-
-                    <span>
-                        <i class="fa-solid fa-face-dizzy"></i>
-                        Nausea
-                    </span>
-
-                </label>
-
-
-                <label class="symptom">
-
-                    <input
-                        type="checkbox"
-                        name="symptoms"
-                        value="Loss of Appetite">
-
-                    <span>
                         <i class="fa-solid fa-utensils"></i>
-                        Loss of Appetite
-                    </span>
 
-                </label>
+                        Do you have digestive problems?
 
-            </div>
+                    </h3>
 
 
-            <div class="field">
-
-                <label for="otherSymptoms">
-                    Other Symptoms
-                </label>
-
-                <textarea
-                    id="otherSymptoms"
-                    name="otherSymptoms"
-                    placeholder="Enter any additional symptoms..."></textarea>
-
-            </div>
-
-        </section>
+                    <div class="yes-no">
 
 
-        <!-- ================= LIFESTYLE ================= -->
+                        <label>
 
-        <section class="card">
+                            <input
+                                type="radio"
+                                name="digestiveProblem"
+                                value="yes">
 
-            <div class="section-heading">
+                            Yes
 
-                <div class="section-icon">
-                    <i class="fa-solid fa-spa"></i>
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="digestiveProblem"
+                                value="no">
+
+                            No
+
+                        </label>
+
+
+                    </div>
+
+
+
+                    <div
+                        id="digestiveQuestions"
+                        class="smart-details">
+
+
+                        <div class="field">
+
+                            <label for="digestiveType">
+                                What type of digestive problem?
+                            </label>
+
+                            <input
+                                type="text"
+                                id="digestiveType"
+                                name="digestiveType"
+                                placeholder="e.g. acidity, constipation, bloating">
+
+                        </div>
+
+
+
+                        <div class="field">
+
+                            <label for="digestiveSeverity">
+                                How severe is it?
+                            </label>
+
+
+                            <select
+                                id="digestiveSeverity"
+                                name="digestiveSeverity">
+
+                                <option value="">
+                                    Select severity
+                                </option>
+
+                                <option value="Mild">
+                                    Mild
+                                </option>
+
+                                <option value="Moderate">
+                                    Moderate
+                                </option>
+
+                                <option value="Severe">
+                                    Severe
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
                 </div>
 
-                <div>
-                    <h2>Lifestyle</h2>
-                    <p>Daily habits and lifestyle information</p>
+
+
+                <!-- =================================================
+                     RESPIRATORY
+                ================================================= -->
+
+                <div class="smart-question">
+
+
+                    <h3>
+
+                        <i class="fa-solid fa-lungs"></i>
+
+                        Do you have any respiratory problems?
+
+                    </h3>
+
+
+                    <div class="yes-no">
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="respiratoryProblem"
+                                value="yes">
+
+                            Yes
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="respiratoryProblem"
+                                value="no">
+
+                            No
+
+                        </label>
+
+
+                    </div>
+
+
+
+                    <div
+                        id="respiratoryQuestions"
+                        class="smart-details">
+
+
+                        <div class="field">
+
+                            <label for="respiratoryType">
+                                What type of respiratory problem?
+                            </label>
+
+
+                            <select
+                                id="respiratoryType"
+                                name="respiratoryType">
+
+                                <option value="">
+                                    Select a problem
+                                </option>
+
+                                <option value="Cough">
+                                    Cough
+                                </option>
+
+                                <option value="Cold">
+                                    Cold
+                                </option>
+
+                                <option value="Breathing Difficulty">
+                                    Breathing Difficulty
+                                </option>
+
+                                <option value="Wheezing">
+                                    Wheezing
+                                </option>
+
+                                <option value="Chest Congestion">
+                                    Chest Congestion
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="field">
+
+                            <label for="respiratoryDuration">
+                                How long have you had this problem?
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="respiratoryDuration"
+                                name="respiratoryDuration"
+                                placeholder="e.g. 2 weeks">
+
+                        </div>
+
+
+                    </div>
+
                 </div>
 
-            </div>
 
 
-            <div class="form-grid">
+                <!-- =================================================
+                     SLEEP
+                ================================================= -->
 
-                <div class="field">
+                <div class="smart-question">
 
-                    <label for="sleep">
-                        Sleep
-                    </label>
 
-                    <div class="input-box">
+                    <h3>
 
                         <i class="fa-solid fa-bed"></i>
 
-                        <input
-                            id="sleep"
-                            type="number"
-                            name="sleep"
-                            min="0"
-                            max="24"
-                            placeholder="Hours per day">
+                        Do you have any problems with your sleep?
+
+                    </h3>
+
+
+                    <div class="yes-no">
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="sleepProblem"
+                                value="yes">
+
+                            Yes
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="sleepProblem"
+                                value="no">
+
+                            No
+
+                        </label>
+
+
+                    </div>
+
+
+
+                    <div
+                        id="sleepQuestions"
+                        class="smart-details">
+
+
+                        <div class="field">
+
+                            <label for="sleepType">
+                                What type of sleep problem?
+                            </label>
+
+
+                            <select
+                                id="sleepType"
+                                name="sleepType">
+
+                                <option value="">
+                                    Select a problem
+                                </option>
+
+                                <option value="Difficulty falling asleep">
+                                    Difficulty falling asleep
+                                </option>
+
+                                <option value="Frequent waking">
+                                    Waking frequently
+                                </option>
+
+                                <option value="Early waking">
+                                    Waking too early
+                                </option>
+
+                                <option value="Excessive sleep">
+                                    Excessive sleep
+                                </option>
+
+                                <option value="Disturbed sleep">
+                                    Disturbed sleep
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="field">
+
+                            <label for="sleepHours">
+                                How many hours do you usually sleep?
+                            </label>
+
+
+                            <input
+                                type="number"
+                                id="sleepHours"
+                                name="sleepHours"
+                                min="0"
+                                max="24"
+                                placeholder="e.g. 7">
+
+                        </div>
+
 
                     </div>
 
                 </div>
 
 
-                <div class="field">
 
-                    <label for="water">
-                        Water Intake
-                    </label>
+                <!-- =================================================
+                     COMMON SYMPTOMS
+                ================================================= -->
 
-                    <div class="input-box">
+                <div class="symptoms">
 
-                        <i class="fa-solid fa-glass-water"></i>
+
+                    <label class="symptom">
 
                         <input
-                            id="water"
-                            type="number"
-                            name="waterIntake"
-                            min="0"
-                            placeholder="Glasses per day">
+                            type="checkbox"
+                            name="symptoms"
+                            value="Acidity">
+
+                        <span>
+
+                            <i class="fa-solid fa-fire"></i>
+
+                            Acidity
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="symptom">
+
+                        <input
+                            type="checkbox"
+                            name="symptoms"
+                            value="Bloating">
+
+                        <span>
+
+                            <i class="fa-solid fa-wind"></i>
+
+                            Bloating
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="symptom">
+
+                        <input
+                            type="checkbox"
+                            name="symptoms"
+                            value="Constipation">
+
+                        <span>
+
+                            <i class="fa-solid fa-toilet"></i>
+
+                            Constipation
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="symptom">
+
+                        <input
+                            type="checkbox"
+                            name="symptoms"
+                            value="Diarrhea">
+
+                        <span>
+
+                            <i class="fa-solid fa-droplet"></i>
+
+                            Diarrhea
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="symptom">
+
+                        <input
+                            type="checkbox"
+                            name="symptoms"
+                            value="Headache">
+
+                        <span>
+
+                            <i class="fa-solid fa-head-side-virus"></i>
+
+                            Headache
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="symptom">
+
+                        <input
+                            type="checkbox"
+                            name="symptoms"
+                            value="Fatigue">
+
+                        <span>
+
+                            <i class="fa-solid fa-battery-quarter"></i>
+
+                            Fatigue
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="symptom">
+
+                        <input
+                            type="checkbox"
+                            name="symptoms"
+                            value="Nausea">
+
+                        <span>
+
+                            <i class="fa-solid fa-face-dizzy"></i>
+
+                            Nausea
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="symptom">
+
+                        <input
+                            type="checkbox"
+                            name="symptoms"
+                            value="Loss of Appetite">
+
+                        <span>
+
+                            <i class="fa-solid fa-utensils"></i>
+
+                            Loss of Appetite
+
+                        </span>
+
+                    </label>
+
+
+                </div>
+
+
+
+                <!-- OTHER SYMPTOMS -->
+
+                <div class="field">
+
+                    <label for="otherSymptoms">
+                        Other Symptoms
+                    </label>
+
+
+                    <textarea
+                        id="otherSymptoms"
+                        name="otherSymptoms"
+                        placeholder="Enter any additional symptoms..."></textarea>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 LIFESTYLE
+            ================================================= -->
+
+            <section class="card">
+
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-spa"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            Lifestyle
+                        </h2>
+
+                        <p>
+                            Daily habits and lifestyle information
+                        </p>
 
                     </div>
 
                 </div>
 
 
-                <div class="field">
 
-                    <label for="activity">
-                        Physical Activity
-                    </label>
+                <div class="form-grid">
 
-                    <select
-                        id="activity"
-                        name="physicalActivity">
 
-                        <option value="">
-                            Select activity level
-                        </option>
+                    <!-- SLEEP -->
 
-                        <option value="Low">Low</option>
-                        <option value="Moderate">Moderate</option>
-                        <option value="High">High</option>
+                    <div class="field">
 
-                    </select>
+                        <label for="sleep">
+                            Sleep
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-bed"></i>
+
+                            <input
+                                id="sleep"
+                                type="number"
+                                name="sleep"
+                                min="0"
+                                max="24"
+                                placeholder="Hours per day">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- WATER -->
+
+                    <div class="field">
+
+                        <label for="water">
+                            Water Intake
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-glass-water"></i>
+
+                            <input
+                                id="water"
+                                type="number"
+                                name="waterIntake"
+                                min="0"
+                                placeholder="Glasses per day">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ACTIVITY -->
+
+                    <div class="field">
+
+                        <label for="activity">
+                            Physical Activity
+                        </label>
+
+
+                        <select
+                            id="activity"
+                            name="physicalActivity">
+
+                            <option value="">
+                                Select activity level
+                            </option>
+
+                            <option value="Low">
+                                Low
+                            </option>
+
+                            <option value="Moderate">
+                                Moderate
+                            </option>
+
+                            <option value="High">
+                                High
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- STRESS -->
+
+                    <div class="field">
+
+                        <label for="stress">
+                            Stress Level
+                        </label>
+
+
+                        <select
+                            id="stress"
+                            name="stressLevel">
+
+                            <option value="">
+                                Select stress level
+                            </option>
+
+                            <option value="Low">
+                                Low
+                            </option>
+
+                            <option value="Moderate">
+                                Moderate
+                            </option>
+
+                            <option value="High">
+                                High
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 AYURVEDIC ASSESSMENT
+            ================================================= -->
+
+            <section class="card">
+
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            Ayurvedic Assessment
+                        </h2>
+
+                        <p>
+                            Indicative lifestyle and constitution assessment
+                        </p>
+
+                    </div>
 
                 </div>
 
 
-                <div class="field">
 
-                    <label for="stress">
-                        Stress Level
-                    </label>
+                <div class="form-grid">
 
-                    <select
-                        id="stress"
-                        name="stressLevel">
 
-                        <option value="">
-                            Select stress level
-                        </option>
+                    <!-- BODY TYPE -->
 
-                        <option value="Low">Low</option>
-                        <option value="Moderate">Moderate</option>
-                        <option value="High">High</option>
+                    <div class="field">
 
-                    </select>
+                        <label for="bodyType">
+                            Body Type
+                        </label>
+
+
+                        <select
+                            id="bodyType"
+                            name="bodyType">
+
+                            <option value="">
+                                Select body type
+                            </option>
+
+                            <option value="Thin / Light">
+                                Thin / Light
+                            </option>
+
+                            <option value="Medium / Moderate">
+                                Medium / Moderate
+                            </option>
+
+                            <option value="Broad / Heavy">
+                                Broad / Heavy
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- APPETITE -->
+
+                    <div class="field">
+
+                        <label for="appetite">
+                            Appetite
+                        </label>
+
+
+                        <select
+                            id="appetite"
+                            name="appetite">
+
+                            <option value="">
+                                Select appetite
+                            </option>
+
+                            <option value="Low">
+                                Low
+                            </option>
+
+                            <option value="Moderate">
+                                Moderate
+                            </option>
+
+                            <option value="High">
+                                High
+                            </option>
+
+                            <option value="Irregular">
+                                Irregular
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- SLEEP QUALITY -->
+
+                    <div class="field">
+
+                        <label for="sleepQuality">
+                            Sleep Quality
+                        </label>
+
+
+                        <select
+                            id="sleepQuality"
+                            name="sleepQuality">
+
+                            <option value="">
+                                Select sleep quality
+                            </option>
+
+                            <option value="Poor">
+                                Poor
+                            </option>
+
+                            <option value="Average">
+                                Average
+                            </option>
+
+                            <option value="Good">
+                                Good
+                            </option>
+
+                        </select>
+
+                    </div>
+
 
                 </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PRACTITIONER NOTES
+            ================================================= -->
+
+            <section class="card">
+
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-notes-medical"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            Practitioner Notes
+                        </h2>
+
+                        <p>
+                            Add observations or additional information
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <textarea
+                    id="notes"
+                    name="notes"
+                    class="notes"
+                    placeholder="Enter practitioner observations..."></textarea>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 BUTTONS
+            ================================================= -->
+
+            <div class="form-actions">
+
+
+                <!-- SAVE DRAFT -->
+
+                <button
+                    type="button"
+                    class="save-btn"
+                    id="saveDraftBtn">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Draft
+
+                </button>
+
+
+
+                <!-- CONTINUE -->
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    Continue to Assessment
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
 
             </div>
 
-        </section>
+
+        </form>
 
 
-        <!-- ================= AYURVEDIC ASSESSMENT ================= -->
+    </main>
 
-        <section class="card">
-
-            <div class="section-heading">
-
-                <div class="section-icon">
-                    <i class="fa-solid fa-leaf"></i>
-                </div>
-
-                <div>
-                    <h2>Ayurvedic Assessment</h2>
-                    <p>Indicative lifestyle and constitution assessment</p>
-                </div>
-
-            </div>
-
-
-            <div class="form-grid">
-
-                <div class="field">
-
-                    <label for="bodyType">
-                        Body Type
-                    </label>
-
-                    <select
-                        id="bodyType"
-                        name="bodyType">
-
-                        <option value="">
-                            Select body type
-                        </option>
-
-                        <option value="Thin / Light">
-                            Thin / Light
-                        </option>
-
-                        <option value="Medium / Moderate">
-                            Medium / Moderate
-                        </option>
-
-                        <option value="Broad / Heavy">
-                            Broad / Heavy
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label for="appetite">
-                        Appetite
-                    </label>
-
-                    <select
-                        id="appetite"
-                        name="appetite">
-
-                        <option value="">
-                            Select appetite
-                        </option>
-
-                        <option value="Low">Low</option>
-                        <option value="Moderate">Moderate</option>
-                        <option value="High">High</option>
-                        <option value="Irregular">Irregular</option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label for="sleepQuality">
-                        Sleep Quality
-                    </label>
-
-                    <select
-                        id="sleepQuality"
-                        name="sleepQuality">
-
-                        <option value="">
-                            Select sleep quality
-                        </option>
-
-                        <option value="Poor">Poor</option>
-                        <option value="Average">Average</option>
-                        <option value="Good">Good</option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= NOTES ================= -->
-
-        <section class="card">
-
-            <div class="section-heading">
-
-                <div class="section-icon">
-                    <i class="fa-solid fa-notes-medical"></i>
-                </div>
-
-                <div>
-                    <h2>Practitioner Notes</h2>
-                    <p>Add observations or additional information</p>
-                </div>
-
-            </div>
-
-
-            <textarea
-                id="notes"
-                name="notes"
-                class="notes"
-                placeholder="Enter practitioner observations..."></textarea>
-
-        </section>
-
-
-        <!-- ================= BUTTONS ================= -->
-
-        <div class="form-actions">
-
-            <button
-                type="button"
-                class="save-btn"
-                id="saveDraftBtn">
-
-                <i class="fa-solid fa-floppy-disk"></i>
-                Save Draft
-
-            </button>
-
-
-            <button
-                type="submit"
-                class="submit-btn">
-
-                Continue to Assessment
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </button>
-
-        </div>
-
-    </form>
-
-</main>
-```
 
 </div>
 
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script src="script.js"></script>
+
 
 </body>
 </html>

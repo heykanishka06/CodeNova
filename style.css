@@ -1714,3 +1714,758 @@ RESPONSIVE
     }
 
 }
+/* =====================================================
+   DOCTOR LOGIN
+===================================================== */
+
+.login-screen {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F5F9F8;
+    padding: 30px;
+}
+
+
+.login-card {
+    width: 100%;
+    max-width: 440px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.10);
+}
+
+
+.login-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+
+.login-logo h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+
+.login-logo p {
+    margin: 3px 0 0;
+    font-size: 13px;
+    color: #718096;
+}
+
+
+.login-heading {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+
+.login-heading h2 {
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+
+.login-heading p {
+    color: #718096;
+    font-size: 14px;
+}
+
+
+.login-field {
+    margin-bottom: 18px;
+}
+
+
+.login-field label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.login-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #dce5e2;
+    border-radius: 12px;
+    padding: 0 14px;
+    height: 50px;
+    background: #fafdfc;
+}
+
+
+.login-input i {
+    color: #52796f;
+}
+
+
+.login-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+}
+
+
+.login-btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background: #1f5c4d;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+
+.login-btn:hover {
+    opacity: 0.92;
+}
+
+
+.login-error {
+    min-height: 20px;
+    margin: 12px 0 0;
+    text-align: center;
+    color: #d64545;
+    font-size: 13px;
+}
+
+
+.demo-login {
+    margin-top: 22px;
+    padding: 15px;
+    border-radius: 12px;
+    background: #f1f7f5;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12px;
+    color: #52615d;
+}
+
+
+.demo-login strong {
+    color: #1f5c4d;
+    margin-bottom: 3px;
+}
+
+
+/* =====================================================
+   APP VISIBILITY
+===================================================== */
+
+#app {
+    display: none;
+}
+/* =====================================================
+   MEDICASE DASHBOARD
+===================================================== */
+
+.dashboard-page {
+    display: none;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.dashboard-welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: linear-gradient(
+        135deg,
+        #0B2522,
+        #124B40
+    );
+
+    border-radius: 18px;
+
+    padding: 28px 30px;
+
+    margin-bottom: 22px;
+
+    color: white;
+
+    box-shadow:
+        0 10px 30px rgba(11, 37, 34, 0.16);
+}
+
+.dashboard-label {
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #9ED4C6;
+}
+
+.dashboard-welcome h1 {
+    margin-top: 6px;
+
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.dashboard-welcome p {
+    margin-top: 6px;
+
+    font-size: 12px;
+
+    color: #BBD6D0;
+}
+
+.dashboard-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: rgba(255,255,255,0.09);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+
+    color: #D9EAE6;
+}
+
+
+/* =========================
+   STAT CARDS
+========================= */
+
+.dashboard-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-bottom: 22px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E0EBE8;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 6px 20px rgba(20, 70, 61, 0.04);
+
+    transition: 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(20, 70, 61, 0.08);
+}
+
+.stat-icon {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+
+    flex-shrink: 0;
+}
+
+.patients-icon {
+    background: #E6F4F0;
+    color: #087F6C;
+}
+
+.cases-icon {
+    background: #EAF0FA;
+    color: #4169A1;
+}
+
+.today-icon {
+    background: #FFF4DE;
+    color: #A87925;
+}
+
+.ai-icon {
+    background: #F1EAF9;
+    color: #7B4BA5;
+}
+
+.stat-card span {
+    display: block;
+
+    font-size: 10px;
+
+    color: #81948F;
+
+    margin-bottom: 4px;
+}
+
+.stat-card strong {
+    display: block;
+
+    font-size: 21px;
+
+    color: #173F38;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   DASHBOARD GRID
+========================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(280px, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+.dashboard-card {
+    background: #FFFFFF;
+
+    border: 1px solid #E0EBE8;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 6px 20px rgba(20, 70, 61, 0.04);
+}
+
+
+/* =========================
+   CARD HEADER
+========================= */
+
+.dashboard-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 21px;
+
+    border-bottom: 1px solid #E9EFED;
+}
+
+.dashboard-card-header h2 {
+    font-size: 15px;
+
+    color: #19473F;
+
+    font-weight: 700;
+}
+
+.dashboard-card-header p {
+    margin-top: 3px;
+
+    font-size: 10px;
+
+    color: #879A95;
+}
+
+.dashboard-link-btn {
+    border: none;
+
+    background: transparent;
+
+    color: #087F6C;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.dashboard-link-btn i {
+    margin-left: 4px;
+}
+
+
+/* =========================
+   RECENT PATIENTS
+========================= */
+
+#recentPatients {
+    padding: 5px 20px 12px;
+}
+
+.dashboard-patient {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #EEF2F0;
+}
+
+.dashboard-patient:last-child {
+    border-bottom: none;
+}
+
+.dashboard-patient-avatar {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 10px;
+
+    background: #E7F3EF;
+
+    color: #087F6C;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.dashboard-patient-info {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.dashboard-patient-info strong {
+    display: block;
+
+    font-size: 11px;
+
+    color: #294B45;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.dashboard-patient-info span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    color: #879A95;
+}
+
+.dashboard-patient-date {
+    font-size: 9px;
+
+    color: #9BAAA6;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.dashboard-empty {
+    text-align: center;
+
+    padding: 35px 15px;
+}
+
+.dashboard-empty i {
+    font-size: 28px;
+
+    color: #A9C5BD;
+
+    margin-bottom: 10px;
+}
+
+.dashboard-empty p {
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: #526C65;
+}
+
+.dashboard-empty span {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 9px;
+
+    color: #9AA9A5;
+}
+
+
+/* =========================
+   QUICK ACTIONS
+========================= */
+
+.quick-actions {
+    padding: 8px 15px 15px;
+}
+
+.quick-action {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 12px 6px;
+
+    background: transparent;
+
+    border: none;
+
+    border-bottom: 1px solid #EEF2F0;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-family: inherit;
+}
+
+.quick-action:last-child {
+    border-bottom: none;
+}
+
+.quick-action:hover {
+    background: #F7FAF9;
+
+    border-radius: 9px;
+}
+
+.quick-action-icon {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    background: #E7F3EF;
+
+    color: #087F6C;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.quick-action div:nth-child(2) {
+    flex: 1;
+}
+
+.quick-action strong {
+    display: block;
+
+    font-size: 10px;
+
+    color: #315850;
+}
+
+.quick-action span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    color: #91A19D;
+}
+
+.quick-action > i {
+    font-size: 9px;
+
+    color: #A0B2AD;
+}
+
+
+/* =========================
+   DOCTOR PROFILE
+========================= */
+
+.doctor-profile-card {
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.profile-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 220px;
+}
+
+.profile-avatar {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 12px;
+
+    background: #0B2522;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+}
+
+.profile-heading h2 {
+    font-size: 13px;
+
+    color: #294B45;
+}
+
+.profile-heading p {
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    color: #879A95;
+}
+
+.profile-details {
+    display: flex;
+
+    flex: 1;
+
+    justify-content: flex-end;
+
+    gap: 45px;
+}
+
+.profile-details div {
+    min-width: 120px;
+}
+
+.profile-details span {
+    display: block;
+
+    font-size: 9px;
+
+    color: #91A19D;
+
+    margin-bottom: 4px;
+}
+
+.profile-details strong {
+    display: block;
+
+    font-size: 10px;
+
+    color: #315850;
+
+    word-break: break-word;
+}
+
+
+/* =========================
+   DASHBOARD RESPONSIVE
+========================= */
+
+@media (max-width: 1050px) {
+
+    .dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .doctor-profile-card {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .profile-details {
+        width: 100%;
+
+        justify-content: flex-start;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .dashboard-welcome {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-details {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+}
