@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Once your backend is ready, replace the value below.
     */
 
-    const AI_API_URL = "/api/summarize";
+    const AI_API_URL = "https://medi-backend-six.vercel.app/api/summarize";
 
     const patientForm =
         document.getElementById("patientForm");
